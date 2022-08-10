@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [count, setCount] = useState(0);
+
+	setTimeout(() => {
+		setCount(count + 1);
+	}, 1000);
+
+	return (
+		<section className="App">
+			<p>Minęło</p>
+			<h1>{count} s.</h1>
+			<p>odkąd tu jesteś.</p>
+		</section>
+	);
 }
 
 export default App;
